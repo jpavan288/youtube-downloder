@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Format</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="video-info">
+                {% if thumbnail %}
+                    <img src="{{ thumbnail }}" alt="Thumbnail">
+                {% endif %}
+                <h2>{{ title }}</h2>
+                {% if duration %}
+                    <p>Duration: {{ duration | int // 60 }}m {{ duration | int % 60 }}s</p>
+                {% endif %}
+            </div>
+
+            <form action="/download" method="POST">
+                <input type="hidden" name="url" value="{{ video_url }}">
+                <div class="formats-list">
+                    {% for f in formats %}
+                        <label class="format-item">
+                            <div>
+                                <span class="res">{{ f.resolution }}</span>
+                                <span class="ext">{{ f.ext }}</span>
+                                <span class="size">{{ f.filesize }} MB</span>
+                                <span class="codec">{% if f.vcodec != 'none' %}Video{% endif %}{% if f.acodec != 'none' %} Audio{% endif %}</span>
+                                {% if f.fps %}<span class="fps">{{ f.fps }} FPS</span>{% endif %}
+                            </div>
+                            <input type="radio" name="format_id" value="{{ f.format_id }}" required>
+                        </label>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="download-btn">Download</button>
+            </form>
+            <div class="back">
+                <a href="/">Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

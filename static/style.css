@@ -1,0 +1,117 @@
+/* General Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container Card */
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+.card {
+    background: white;
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: 0 50px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Headings */
+h1, h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 1em;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Video Info */
+.video-info img {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Formats List */
+.formats-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.format-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.format-item:hover {
+    background-color: #f9f9f9;
+    border-left: 5px solid #007BFF;
+}
+
+.format-item input[type="radio"] {
+    transform: scale(1.2);
+}
+
+/* Download Button */
+.download-btn {
+    width: 100%;
+}
+
+/* Back Link */
+.back a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back a:hover {
+    text-decoration: underline;
+}
